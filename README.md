@@ -113,8 +113,3 @@ This repository is licensed under the **MIT License**. See the [LICENSE](LICENSE
 
 ```
 
----
-
-Let me know if you want to include Jupyter notebook support, `.gitignore`, or folder templates next!
-```
-
