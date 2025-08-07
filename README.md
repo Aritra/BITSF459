@@ -54,7 +54,7 @@ Alternatively, create and install manually:
 ```bash
 conda create -n cv-env python=3.10
 conda activate cv-env
-pip install opencv-python opencv-contrib-python numpy matplotlib
+pip install opencv-python opencv-contrib-python numpy matplotlib open3d
 ```
 You may add neccessary libraries later to your environment using pip
 
@@ -100,6 +100,7 @@ dependencies:
   - pip:
       - opencv-python
       - opencv-contrib-python
+      - open3d
 ```
 
 ---
