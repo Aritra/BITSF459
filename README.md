@@ -1,16 +1,4 @@
-Here’s the **entire `README.md`** in **Markdown**, including:
 
-* GitHub badges
-* System & setup instructions
-* Assignment folder structure
-* Conda `.yml` support
-* VSCode recommendation
-
-Just copy-paste this into your `README.md` file:
-
----
-
-````markdown
 # 📸 Computer Vision Demo Code Repository – BITS F459
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
