@@ -3,7 +3,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
-[![Python](https://img.shields.io/badge/python-3.9+-blue.svg)]()
+[![Python](https://img.shields.io/badge/python-3.10+-blue.svg)]()
 
 This repository contains **demo codes and experiments** used during lectures and labs for the **Computer Vision** course *(Subject Code: BITS F459)* at BITS Pilani Hyderabad campus.
 
@@ -93,7 +93,7 @@ channels:
   - defaults
   - conda-forge
 dependencies:
-  - python=3.9
+  - python=3.10
   - numpy
   - matplotlib
   - pip
