@@ -3,9 +3,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
-[![Python](https://img.shields.io/badge/python-3.10+-blue.svg)]()
+[![Python](https://img.shields.io/badge/python-3.9+-blue.svg)]()
 
-This repository contains **demo codes and experiments** used during lectures and labs for the **Computer Vision** course *(Subject Code: BITS F459)* at BITS Pilani.
+This repository contains **demo codes and experiments** used during lectures and labs for the **Computer Vision** course *(Subject Code: BITS F459)* at BITS Pilani Hyderabad campus.
 
 > 📌 Refer to this repository regularly for in-class coding demos, updates, and assignment templates.
 
@@ -56,6 +56,7 @@ conda create -n cv-env python=3.10
 conda activate cv-env
 pip install opencv-python opencv-contrib-python numpy matplotlib
 ```
+You may add neccessary libraries later to your environment using pip
 
 ---
 
