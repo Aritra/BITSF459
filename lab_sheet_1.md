@@ -1,5 +1,4 @@
-Here’s a **complete GitHub-ready markdown** for your first Computer Vision lab sheet.
-I’ve made it structured, with clear sections, fenced code blocks, and task prompts so you can copy-paste it directly into a `.md` file.
+***Lab Sheet 1***
 
 ---
 
