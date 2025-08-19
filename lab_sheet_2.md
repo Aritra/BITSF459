@@ -1,7 +1,6 @@
 ***Lab Sheet 2***
 
 ---
-````markdown
 # Computer Vision Lab 2: Edge Detection, Morphology, and Object Tracking
 
 ## Objectives
@@ -27,7 +26,6 @@ In this lab, students will:
 ```bash
 git clone https://github.com/Aritra/BITSF459
 cd BITSF459
-````
 
 ---
 
