@@ -1,4 +1,7 @@
+***Lab Sheet 1***
+
 ---
+````markdown
 # Computer Vision Lab 2: Edge Detection, Morphology, and Object Tracking
 
 ## Objectives
