@@ -34,18 +34,18 @@ Finally, you will explore a simple **structure-from-motion (SfM)** pipeline that
 ### The Camera Intrinsic Matrix
 The intrinsic matrix \(K\) is:
 
-\[
+$$
 K =
 \begin{bmatrix}
 f_x & s & c_x \\
 0   & f_y & c_y \\
 0   & 0   & 1
 \end{bmatrix}
-\]
+$$
 
-- \(f_x, f_y\): focal lengths in pixel units.  
-- \(c_x, c_y\): principal point (optical center).  
-- \(s\): skew factor (often zero).  
+- $$\(f_x, f_y\)$$: focal lengths in pixel units.  
+- $$\(c_x, c_y\)$$: principal point (optical center).  
+- $$\(s\)$$: skew factor (often zero).  
 
 **Physical meaning:**  
 - Focal lengths determine field of view.  
