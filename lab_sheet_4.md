@@ -100,3 +100,78 @@ $$
 - `single_cam_sfm.py` may need debugging if triangulation or matching fails — fixing these issues is part of the exercise.
 
 ---
+
+## Appendix: Explanation of Key OpenCV Functions
+
+### 1. `cv2.findChessboardCorners(gray, (CHESSBOARD_COLS, CHESSBOARD_ROWS), None)`
+- **Purpose:** Detects the positions of internal chessboard corners in a grayscale image.  
+- **Inputs:**  
+  - `gray`: Grayscale input image.  
+  - `(CHESSBOARD_COLS, CHESSBOARD_ROWS)`: Number of inner corners per row and column of the chessboard pattern.  
+- **Output:**  
+  - Returns a boolean flag (found or not) and an array of detected corner points.  
+- **Use:** First step in calibration to locate 2D feature points.
+
+---
+
+### 2. `cv2.cornerSubPix(gray, corners, (11,11), (-1,-1), criteria)`
+- **Purpose:** Refines the detected corner positions to **sub-pixel accuracy**.  
+- **Inputs:**  
+  - `gray`: Grayscale image.  
+  - `corners`: Initial corner estimates from `findChessboardCorners`.  
+  - `(11,11)`: Search window size for refinement.  
+  - `(-1,-1)`: No dead zone around corners.  
+  - `criteria`: Stopping criteria (e.g., max iterations or minimum error).  
+- **Output:** Updated corner positions with higher precision.  
+- **Use:** Improves accuracy of calibration.
+
+---
+
+### 3. `cv2.calibrateCamera(objpoints, imgpoints, gray.shape[::-1], None, None)`
+- **Purpose:** Estimates the **camera intrinsic matrix**, distortion coefficients, and extrinsic parameters.  
+- **Inputs:**  
+  - `objpoints`: 3D world points (e.g., chessboard corners in real-world coordinates).  
+  - `imgpoints`: Corresponding 2D points in images.  
+  - `gray.shape[::-1]`: Image size (width, height).  
+- **Output:**  
+  - RMS reprojection error.  
+  - Intrinsic matrix `K`.  
+  - Distortion coefficients.  
+  - Rotation and translation vectors for each view.  
+- **Use:** Core step to obtain camera calibration parameters.
+
+---
+
+### 4. `cv2.undistort(img, mtx, dist, None, mtx)`
+- **Purpose:** Removes lens distortion from an image using calibration results.  
+- **Inputs:**  
+  - `img`: Distorted input image.  
+  - `mtx`: Intrinsic matrix.  
+  - `dist`: Distortion coefficients.  
+- **Output:** Undistorted image.  
+- **Use:** Verification of calibration — straight lines remain straight.
+
+---
+
+### 5. `cv2.getOptimalNewCameraMatrix(cam_K, dist_coeffs, (w, h), 1, (w, h))`
+- **Purpose:** Computes a new camera matrix that adjusts the field of view while minimizing black regions after undistortion.  
+- **Inputs:**  
+  - `cam_K`: Original intrinsic matrix.  
+  - `dist_coeffs`: Distortion coefficients.  
+  - `(w,h)`: Image width and height.  
+  - `1`: Free scaling parameter (1 keeps all pixels, 0 crops).  
+- **Output:** New camera matrix and region of interest.  
+- **Use:** Optimizes undistortion for practical use.
+
+---
+
+### 6. `cv2.triangulatePoints(P1, P2, pts1.T, pts2.T)`
+- **Purpose:** Reconstructs 3D points from two camera views.  
+- **Inputs:**  
+  - `P1, P2`: Projection matrices for the two views.  
+  - `pts1, pts2`: Matched 2D feature points (transposed to shape 2×N).  
+- **Output:** Homogeneous 4×N matrix of reconstructed 3D points.  
+- **Use:** Basis for structure-from-motion and 3D reconstruction.
+
+---
+
